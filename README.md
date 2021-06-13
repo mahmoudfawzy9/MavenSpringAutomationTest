@@ -5,7 +5,7 @@ All you need is running the Junit test at the TestopiaTest class and enjoy : )
 
 IDEs: IntelliJ or Eclipse IDE (you can import here)
 
-You will also need to update the maven project pom file & any needed libraries
+You will also need to update the maven project pom file & any needed libraries (big size to be uploaded)
 jdK 1.8_211
 
 Option2
