@@ -1,0 +1,692 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<groupId>testopia</groupId>
+	<artifactId>testopia</artifactId>
+	<version>0.0.1</version>
+	<packaging>jar</packaging>
+	
+
+	<properties>
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+		<java.version>1.8</java.version>
+		<jub.version>8.5.0.127</jub.version>
+
+	</properties>
+
+	<parent>
+
+		<groupId>org.springframework.boot</groupId>
+		<artifactId>spring-boot-starter-parent</artifactId>
+		<version>1.3.5.RELEASE</version>
+
+	</parent>
+
+
+
+	<dependencies>
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter</artifactId>
+
+			<exclusions>
+				<exclusion>
+					<groupId>org.springframework.boot</groupId>
+					<artifactId>spring-boot-starter-logging</artifactId>
+				</exclusion>
+			</exclusions>
+		</dependency>
+
+<dependency>
+    <groupId>org.springframework</groupId>
+    <artifactId>spring-test</artifactId>
+    <version>4.0.5.RELEASE</version>
+    <scope>test</scope>
+</dependency>
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-test</artifactId>
+			<scope>test</scope>
+		</dependency>
+		<!-- https://mvnrepository.com/artifact/net.sourceforge.jexcelapi/jxl -->
+		<dependency>
+			<groupId>net.sourceforge.jexcelapi</groupId>
+			<artifactId>jxl</artifactId>
+			<version>2.6.12</version>
+		</dependency>
+
+		<dependency>
+			<groupId>junit</groupId>
+			<artifactId>junit</artifactId>
+			<version>4.10</version>
+			<scope>test</scope>
+		</dependency>
+
+
+		<dependency>
+			<groupId>org.seleniumhq.selenium</groupId>
+			<artifactId>selenium-server</artifactId>
+			<version>3.141.59</version>
+			<scope>test</scope>
+		</dependency>
+		<dependency>
+			<groupId>org.seleniumhq.selenium</groupId>
+			<artifactId>selenium-api</artifactId>
+			<version>3.141.59</version>
+			<scope>test</scope>
+		</dependency>
+		<!-- https://mvnrepository.com/artifact/org.seleniumhq.selenium/selenium-java -->
+		<dependency>
+			<groupId>org.seleniumhq.selenium</groupId>
+			<artifactId>selenium-java</artifactId>
+			<version>3.141.59</version>
+			<scope>test</scope>
+		</dependency>
+		<dependency>
+			<groupId>org.seleniumhq.selenium</groupId>
+			<artifactId>selenium-remote-driver</artifactId>
+			<version>3.141.59</version>
+
+		</dependency>
+
+		<dependency>
+			<groupId>org.seleniumhq.selenium</groupId>
+			<artifactId>client-combined</artifactId>
+			<version>3.141.59</version>
+			<scope>system</scope>
+			<systemPath>${basedir}/lib/client-combined-3.4.0-nodeps.jar</systemPath>
+
+		</dependency>
+		<dependency>
+			<groupId>org.seleniumhq.selenium</groupId>
+			<artifactId>commons-exec</artifactId>
+			<version>1.3</version>
+			<scope>system</scope>
+			<type>jar</type>
+			<systemPath>${basedir}/lib/commons-exec-1.3.jar</systemPath>
+
+		</dependency>
+
+<dependency>
+    <groupId>org.testng</groupId>
+    <artifactId>testng</artifactId>
+    <version>7.4.0</version>
+    <scope>test</scope>
+</dependency>
+
+		<!-- https://mvnrepository.com/artifact/org.seleniumhq.selenium/selenium-firefox-driver -->
+		<!-- <dependency> <groupId>org.seleniumhq.selenium</groupId> <artifactId>selenium-firefox-driver</artifactId> 
+			<version>3.4.0</version> <scope>test</scope> </dependency> -->
+		<!-- https://mvnrepository.com/artifact/cglib/cglib-nodep -->
+		<dependency>
+			<groupId>cglib</groupId>
+			<artifactId>cglib-nodep</artifactId>
+			<version>3.1</version>
+		</dependency>
+		<!-- https://mvnrepository.com/artifact/org.apache.commons/commons-exec -->
+		<dependency>
+			<groupId>org.apache.commons</groupId>
+			<artifactId>commons-exec</artifactId>
+			<version>1.3</version>
+		</dependency>
+		<!-- https://mvnrepository.com/artifact/commons-logging/commons-logging -->
+		<dependency>
+			<groupId>commons-logging</groupId>
+			<artifactId>commons-logging</artifactId>
+			<version>1.2</version>
+		</dependency>
+
+		<!-- https://mvnrepository.com/artifact/org.seleniumhq.selenium/selenium-remote-driver -->
+		<!-- <dependency> <groupId>org.seleniumhq.selenium</groupId> <artifactId>selenium-remote-driver</artifactId> 
+			<version>2.53.1</version> </dependency> -->
+		<!-- https://mvnrepository.com/artifact/org.seleniumhq.selenium/selenium-support -->
+		<dependency>
+			<groupId>org.seleniumhq.selenium</groupId>
+			<artifactId>selenium-support</artifactId>
+			<version>2.0a7</version>
+		</dependency>
+
+		<!-- https://mvnrepository.com/artifact/org.seleniumhq.selenium/selenium-api -->
+		<!-- <dependency> -->
+		<!-- <groupId>org.seleniumhq.selenium</groupId> -->
+		<!-- <artifactId>selenium-api</artifactId> -->
+		<!-- <version>3.4.0</version> -->
+		<!-- </dependency> -->
+
+		<!-- https://mvnrepository.com/artifact/org.seleniumhq.selenium/selenium-api -->
+
+
+
+		<!-- <dependency> -->
+		<!-- <groupId>org.springframework.boot</groupId> -->
+		<!-- <artifactId>spring-boot-starter-test</artifactId> -->
+		<!-- <version>1.3.2.RELEASE</version> -->
+		<!-- <scope>test</scope> -->
+		<!-- </dependency> -->
+
+
+
+
+
+		<dependency>
+			<groupId>org.mockito</groupId>
+			<artifactId>mockito-all</artifactId>
+			<version>1.9.0</version>
+
+		</dependency>
+		<dependency>
+			<groupId>org.apache.maven.shared</groupId>
+			<artifactId>maven-verifier</artifactId>
+			<version>1.3</version>
+
+		</dependency>
+		<dependency>
+			<groupId>org.apache.maven.plugin-testing</groupId>
+			<artifactId>maven-plugin-testing-harness</artifactId>
+			<version>1.2</version>
+
+		</dependency>
+
+		<!-- <dependency> -->
+		<!-- <groupId>junit-addons</groupId> -->
+		<!-- <artifactId>junit-addons</artifactId> -->
+		<!-- <version>1.4</version> -->
+
+		<!-- </dependency> -->
+
+
+		<!-- <dependency> -->
+		<!-- <groupId>org.apache.maven.plugins</groupId> -->
+		<!-- <artifactId>maven-deploy-plugin</artifactId> -->
+		<!-- <version>2.8.2</version> -->
+
+		<!-- <type>maven-plugin</type> -->
+		<!-- </dependency> -->
+
+		<dependency>
+			<groupId>org.sonatype.aether</groupId>
+			<artifactId>aether-api</artifactId>
+			<version>1.8</version>
+		</dependency>
+		<dependency>
+			<groupId>org.sonatype.aether</groupId>
+			<artifactId>aether-util</artifactId>
+			<version>1.8</version>
+		</dependency>
+		<dependency>
+			<groupId>org.apache.maven</groupId>
+			<artifactId>maven-core</artifactId>
+			<version>3.3.3</version>
+		</dependency>
+		<dependency>
+			<groupId>org.apache.maven</groupId>
+			<artifactId>maven-plugin-api</artifactId>
+			<version>3.3.9</version>
+		</dependency>
+
+		<dependency>
+			<groupId>org.codehaus.plexus</groupId>
+			<artifactId>plexus-archiver</artifactId>
+			<version>2.1</version>
+		</dependency>
+		<dependency>
+			<groupId>org.apache.commons</groupId>
+			<artifactId>commons-exec</artifactId>
+			<version>1.1</version>
+		</dependency>
+		<dependency>
+			<groupId>dom4j</groupId>
+			<artifactId>dom4j</artifactId>
+			<version>1.6.1</version>
+		</dependency>
+
+		<dependency>
+			<groupId>jaxen</groupId>
+			<artifactId>jaxen</artifactId>
+			<version>1.1.4</version>
+		</dependency>
+		<dependency>
+			<groupId>org.eclipse.jubula.client.api</groupId>
+			<artifactId>org.eclipse.jubula.client.api</artifactId>
+			<version>${jub.version}</version>
+			<scope>system</scope>
+			<systemPath>${basedir}/lib/org.eclipse.jubula.client.api.jar</systemPath>
+		</dependency>
+
+		<dependency>
+			<groupId>org.eclipse.jubula.client.api.commands</groupId>
+			<artifactId>org.eclipse.jubula.client.api.commands</artifactId>
+			<version>${jub.version}</version>
+			<scope>system</scope>
+			<systemPath>${basedir}/lib/org.eclipse.jubula.client.api.commands.jar</systemPath>
+		</dependency>
+		<dependency>
+			<groupId>org.eclipse.jubula.tools.api</groupId>
+			<artifactId>org.eclipse.jubula.tools.api</artifactId>
+			<version>${jub.version}</version>
+			<scope>system</scope>
+			<systemPath>${basedir}/lib/org.eclipse.jubula.tools.jar</systemPath>
+		</dependency>
+		<dependency>
+			<groupId>org.eclipse.jubula.communication</groupId>
+			<artifactId>org.eclipse.jubula.communication</artifactId>
+			<version>${jub.version}</version>
+			<scope>system</scope>
+			<systemPath>${basedir}/lib/org.eclipse.jubula.communication.jar</systemPath>
+		</dependency>
+
+		<dependency>
+			<groupId>org.eclipse.jubula.feature.api</groupId>
+			<artifactId>org.eclipse.jubula.feature.api</artifactId>
+			<version>${jub.version}</version>
+			<scope>system</scope>
+			<systemPath>${basedir}/lib/org.eclipse.jubula.feature.api.jar</systemPath>
+		</dependency>
+
+		<dependency>
+			<groupId>org.eclipse.jubula.toolkit.api</groupId>
+			<artifactId>org.eclipse.jubula.toolkit.api</artifactId>
+			<version>${jub.version}</version>
+			<scope>system</scope>
+			<systemPath>${basedir}/lib/org.eclipse.jubula.toolkit.api.jar</systemPath>
+		</dependency>
+
+		<dependency>
+			<groupId>org.eclipse.jubula.toolkit.base.api</groupId>
+			<artifactId>org.eclipse.jubula.toolkit.base.api</artifactId>
+			<version>${jub.version}</version>
+			<scope>system</scope>
+			<systemPath>${basedir}/lib/org.eclipse.jubula.toolkit.base.api.jar</systemPath>
+		</dependency>
+		<dependency>
+			<groupId>org.eclipse.jubula.toolkit.concrete.api</groupId>
+			<artifactId>org.eclipse.jubula.toolkit.concrete.api</artifactId>
+			<version>${jub.version}</version>
+			<scope>system</scope>
+			<systemPath>${basedir}/lib/org.eclipse.jubula.toolkit.concrete.api.jar</systemPath>
+		</dependency>
+		<dependency>
+			<groupId>org.eclipse.jubula.toolkit.gef.api</groupId>
+			<artifactId>org.eclipse.jubula.toolkit.gef.api</artifactId>
+			<version>${jub.version}</version>
+			<scope>system</scope>
+			<systemPath>${basedir}/lib/org.eclipse.jubula.toolkit.gef.api.jar</systemPath>
+		</dependency>
+		<dependency>
+			<groupId>org.eclipse.jubula.toolkit.html</groupId>
+			<artifactId>org.eclipse.jubula.toolkit.html</artifactId>
+			<version>${jub.version}</version>
+			<scope>system</scope>
+			<systemPath>${basedir}/lib/org.eclipse.jubula.toolkit.html.jar</systemPath>
+		</dependency>
+		<dependency>
+			<groupId>org.eclipse.jubula.toolkit.javafx.api</groupId>
+			<artifactId>org.eclipse.jubula.toolkit.javafx.api</artifactId>
+			<version>${jub.version}</version>
+			<scope>system</scope>
+			<systemPath>${basedir}/lib/org.eclipse.jubula.toolkit.javafx.api.jar</systemPath>
+		</dependency>
+
+		<dependency>
+			<groupId>org.eclipse.jubula.client.api.converter.annotations</groupId>
+			<artifactId>org.eclipse.jubula.client.api.converter.annotations</artifactId>
+			<version>${jub.version}</version>
+			<scope>system</scope>
+			<systemPath>${basedir}/lib/org.eclipse.jubula.client.api.converter.annotations.jar</systemPath>
+		</dependency>
+
+		<dependency>
+			<groupId>org.eclipse.jubula.client.api.converter.annotations.source</groupId>
+			<artifactId>org.eclipse.jubula.client.api.converter.annotations.source</artifactId>
+			<version>${jub.version}</version>
+			<scope>system</scope>
+			<systemPath>${basedir}/lib/org.eclipse.jubula.client.api.converter.annotations.source.jar</systemPath>
+		</dependency>
+
+
+		<dependency>
+			<groupId>org.eclipse.jubula.client.api.source</groupId>
+			<artifactId>org.eclipse.jubula.client.api.source</artifactId>
+			<version>${jub.version}</version>
+			<scope>system</scope>
+			<systemPath>${basedir}/lib/org.eclipse.jubula.client.api.source.jar</systemPath>
+		</dependency>
+
+		<dependency>
+			<groupId>org.eclipse.jubula.communication.source</groupId>
+			<artifactId>org.eclipse.jubula.communication.source</artifactId>
+			<version>${jub.version}</version>
+			<scope>system</scope>
+			<systemPath>${basedir}/lib/org.eclipse.jubula.communication.source.jar</systemPath>
+		</dependency>
+
+		<dependency>
+			<groupId>org.eclipse.jubula.feature.api.core</groupId>
+			<artifactId>org.eclipse.jubula.feature.api.core</artifactId>
+			<version>${jub.version}</version>
+			<scope>system</scope>
+			<systemPath>${basedir}/lib/org.eclipse.jubula.feature.api.core.jar</systemPath>
+		</dependency>
+
+		<dependency>
+			<groupId>org.eclipse.jubula.client.api.commands.source</groupId>
+			<artifactId>org.eclipse.jubula.client.api.commands.source</artifactId>
+			<version>${jub.version}</version>
+			<scope>system</scope>
+			<systemPath>${basedir}/lib/org.eclipse.jubula.client.api.commands.source.jar</systemPath>
+		</dependency>
+
+		<dependency>
+			<groupId>org.eclipse.jubula.feature.api.core.source</groupId>
+			<artifactId>org.eclipse.jubula.feature.api.core.source</artifactId>
+			<version>${jub.version}</version>
+			<scope>system</scope>
+			<systemPath>${basedir}/lib/org.eclipse.jubula.feature.api.core.source.jar</systemPath>
+		</dependency>
+
+		<dependency>
+			<groupId>org.eclipse.jubula.feature.api.source</groupId>
+			<artifactId>org.eclipse.jubula.feature.api.source</artifactId>
+			<version>${jub.version}</version>
+			<scope>system</scope>
+			<systemPath>${basedir}/lib/org.eclipse.jubula.feature.api.source.jar</systemPath>
+		</dependency>
+
+		<dependency>
+			<groupId>org.eclipse.jubula.toolkit.api.source</groupId>
+			<artifactId>org.eclipse.jubula.toolkit.api.source</artifactId>
+			<version>${jub.version}</version>
+			<scope>system</scope>
+			<systemPath>${basedir}/lib/org.eclipse.jubula.toolkit.api.source.jar</systemPath>
+		</dependency>
+
+		<dependency>
+			<groupId>org.eclipse.jubula.toolkit.base.api.source</groupId>
+			<artifactId>org.eclipse.jubula.toolkit.base.api.source</artifactId>
+			<version>${jub.version}</version>
+			<scope>system</scope>
+			<systemPath>${basedir}/lib/org.eclipse.jubula.toolkit.base.api.source.jar</systemPath>
+		</dependency>
+
+		<dependency>
+			<groupId>org.eclipse.jubula.toolkit.concrete.api.source</groupId>
+			<artifactId>org.eclipse.jubula.toolkit.concrete.api.source</artifactId>
+			<version>${jub.version}</version>
+			<scope>system</scope>
+			<systemPath>${basedir}/lib/org.eclipse.jubula.toolkit.concrete.api.source.jar</systemPath>
+		</dependency>
+
+		<dependency>
+			<groupId>org.eclipse.jubula.toolkit.gef.api.source</groupId>
+			<artifactId>org.eclipse.jubula.toolkit.gef.api.source</artifactId>
+			<version>${jub.version}</version>
+			<scope>system</scope>
+			<systemPath>${basedir}/lib/org.eclipse.jubula.toolkit.gef.api.source.jar</systemPath>
+		</dependency>
+
+		<dependency>
+			<groupId>org.eclipse.jubula.toolkit.html.api</groupId>
+			<artifactId>org.eclipse.jubula.toolkit.html.api</artifactId>
+			<version>${jub.version}</version>
+			<scope>system</scope>
+			<systemPath>${basedir}/lib/org.eclipse.jubula.toolkit.html.api.jar</systemPath>
+		</dependency>
+
+		<dependency>
+			<groupId>org.eclipse.jubula.toolkit.html.api.source</groupId>
+			<artifactId>org.eclipse.jubula.toolkit.html.api.source</artifactId>
+			<version>${jub.version}</version>
+			<scope>system</scope>
+			<systemPath>${basedir}/lib/org.eclipse.jubula.toolkit.html.api.source.jar</systemPath>
+		</dependency>
+
+		<dependency>
+			<groupId>org.eclipse.jubula.toolkit.html.source</groupId>
+			<artifactId>org.eclipse.jubula.toolkit.html.source</artifactId>
+			<version>${jub.version}</version>
+			<scope>system</scope>
+			<systemPath>${basedir}/lib/org.eclipse.jubula.toolkit.html.source.jar</systemPath>
+		</dependency>
+
+		<dependency>
+			<groupId>org.eclipse.jubula.toolkit.javafx.api-5.0.0.201705050842</groupId>
+			<artifactId>org.eclipse.jubula.toolkit.javafx.api-5.0.0.201705050842</artifactId>
+			<version>5.0.0</version>
+			<scope>system</scope>
+			<systemPath>${basedir}/lib/org.eclipse.jubula.toolkit.javafx.api-5.0.0.201705050842.jar</systemPath>
+		</dependency>
+
+		<dependency>
+			<groupId>org.eclipse.jubula.toolkit.javafx.api.source-5.0.0.201705050842</groupId>
+			<artifactId>org.eclipse.jubula.toolkit.javafx.api.source-5.0.0.201705050842</artifactId>
+			<version>5.0.0</version>
+			<scope>system</scope>
+			<systemPath>${basedir}/lib/org.eclipse.jubula.toolkit.javafx.api.source-5.0.0.201705050842.jar</systemPath>
+		</dependency>
+
+		<dependency>
+			<groupId>org.eclipse.jubula.toolkit.javafx.api.source</groupId>
+			<artifactId>org.eclipse.jubula.toolkit.javafx.api.source</artifactId>
+			<version>${jub.version}</version>
+			<scope>system</scope>
+			<systemPath>${basedir}/lib/org.eclipse.jubula.toolkit.javafx.api.source.jar</systemPath>
+		</dependency>
+
+		<dependency>
+			<groupId>org.eclipse.jubula.toolkit.rcp.api</groupId>
+			<artifactId>org.eclipse.jubula.toolkit.rcp.api</artifactId>
+			<version>${jub.version}</version>
+			<scope>system</scope>
+			<systemPath>${basedir}/lib/org.eclipse.jubula.toolkit.rcp.api.jar</systemPath>
+		</dependency>
+
+		<dependency>
+			<groupId>org.eclipse.jubula.toolkit.rcp.api.source</groupId>
+			<artifactId>org.eclipse.jubula.toolkit.rcp.api.source</artifactId>
+			<version>${jub.version}</version>
+			<scope>system</scope>
+			<systemPath>${basedir}/lib/org.eclipse.jubula.toolkit.rcp.api.source.jar</systemPath>
+		</dependency>
+
+		<dependency>
+			<groupId>org.eclipse.jubula.toolkit.swing.api</groupId>
+			<artifactId>org.eclipse.jubula.toolkit.swing.api</artifactId>
+			<version>${jub.version}</version>
+			<scope>system</scope>
+			<systemPath>${basedir}/lib/org.eclipse.jubula.toolkit.swing.api.jar</systemPath>
+		</dependency>
+
+		<dependency>
+			<groupId>org.eclipse.jubula.toolkit.swing.api.source</groupId>
+			<artifactId>org.eclipse.jubula.toolkit.swing.api.source</artifactId>
+			<version>${jub.version}</version>
+			<scope>system</scope>
+			<systemPath>${basedir}/lib/org.eclipse.jubula.toolkit.swing.api.source.jar</systemPath>
+		</dependency>
+
+		<dependency>
+			<groupId>org.eclipse.jubula.toolkit.swt.api</groupId>
+			<artifactId>org.eclipse.jubula.toolkit.swt.api</artifactId>
+			<version>${jub.version}</version>
+			<scope>system</scope>
+			<systemPath>${basedir}/lib/org.eclipse.jubula.toolkit.swt.api.jar</systemPath>
+		</dependency>
+
+		<dependency>
+			<groupId>org.eclipse.jubula.toolkit.swt.api.source</groupId>
+			<artifactId>org.eclipse.jubula.toolkit.swt.api.source</artifactId>
+			<version>${jub.version}</version>
+			<scope>system</scope>
+			<systemPath>${basedir}/lib/org.eclipse.jubula.toolkit.swt.api.source.jar</systemPath>
+		</dependency>
+
+		<dependency>
+			<groupId>org.eclipse.jubula.client.api.converter.annotations</groupId>
+			<artifactId>org.eclipse.jubula.client.api.converter.annotations</artifactId>
+			<version>${jub.version}</version>
+			<scope>system</scope>
+			<systemPath>${basedir}/lib/org.eclipse.jubula.client.api.converter.annotations.jar</systemPath>
+		</dependency>
+
+
+		<!-- <dependency> <groupId>org.eclipse.jubula.tools-4.0.0.201705050842</groupId> 
+			<artifactId>org.eclipse.jubula.tools-4.0.0.201705050842</artifactId> <version>4.0.0</version> 
+			<scope>system</scope> <systemPath>${basedir}/lib/org.eclipse.jubula.tools-4.0.0.201705050842.jar</systemPath> 
+			</dependency> -->
+
+		<dependency>
+			<groupId>org.eclipse.jubula.tools.source</groupId>
+			<artifactId>org.eclipse.jubula.tools.source</artifactId>
+			<version>${jub.version}</version>
+			<scope>system</scope>
+			<systemPath>${basedir}/lib/org.eclipse.jubula.tools.source.jar</systemPath>
+		</dependency>
+
+
+		<dependency>
+			<groupId>ojfxswt</groupId>
+			<artifactId>jfxswt</artifactId>
+			<version>${jub.version}</version>
+			<scope>system</scope>
+			<systemPath>${basedir}/lib/jfxswt.jar</systemPath>
+		</dependency>
+
+		<dependency>
+			<groupId>jsse</groupId>
+			<artifactId>jsse</artifactId>
+			<version>${jub.version}</version>
+			<scope>system</scope>
+			<systemPath>${basedir}/lib/jsse.jar</systemPath>
+		</dependency>
+
+		<dependency>
+			<groupId>management-agent</groupId>
+			<artifactId>management-agent</artifactId>
+			<version>${jub.version}</version>
+			<scope>system</scope>
+			<systemPath>${basedir}/lib/management-agent.jar</systemPath>
+		</dependency>
+		<dependency>
+			<groupId>org.apache.commons.codec</groupId>
+			<artifactId>org.apache.commons.codec</artifactId>
+			<version>${jub.version}</version>
+			<scope>system</scope>
+			<systemPath>${basedir}/lib/org.apache.commons.codec.jar</systemPath>
+		</dependency>
+		<dependency>
+			<groupId>org.apache.commons.lang</groupId>
+			<artifactId>org.apache.commons.lang</artifactId>
+			<version>${jub.version}</version>
+			<scope>system</scope>
+			<systemPath>${basedir}/lib/org.apache.commons.lang.jar</systemPath>
+		</dependency>
+		<dependency>
+			<groupId>org.eclipse.osgi-3.11.3.v20170209-1843</groupId>
+			<artifactId>org.eclipse.osgi-3.11.3.v20170209-1843</artifactId>
+			<version>3.11.3</version>
+			<scope>system</scope>
+			<systemPath>${basedir}/lib/org.eclipse.osgi-3.11.3.v20170209-1843.jar</systemPath>
+		</dependency>
+		<dependency>
+			<groupId>org.eclipse.osgi</groupId>
+			<artifactId>org.eclipse.osgi</artifactId>
+			<version>${jub.version}</version>
+			<scope>system</scope>
+			<systemPath>${basedir}/lib/org.eclipse.osgi.jar</systemPath>
+		</dependency>
+		<dependency>
+			<groupId>org.slf4j.api-1.7.2.v20121108-1250</groupId>
+			<artifactId>org.slf4j.api-1.7.2.v20121108-1250</artifactId>
+			<version>1.7.2</version>
+			<scope>system</scope>
+			<systemPath>${basedir}/lib/org.slf4j.api-1.7.2.v20121108-1250.jar</systemPath>
+		</dependency>
+		<dependency>
+			<groupId>org.slf4j.api</groupId>
+			<artifactId>org.slf4j.api</artifactId>
+			<version>${jub.version}</version>
+			<scope>system</scope>
+			<systemPath>${basedir}/lib/org.slf4j.api.jar</systemPath>
+		</dependency>
+		<dependency>
+			<groupId>org.xmlpull-1.1.3.4_v201201052148.jar</groupId>
+			<artifactId>org.xmlpull-1.1.3.4_v201201052148.jar</artifactId>
+			<version>1.1.3.4</version>
+			<scope>system</scope>
+			<systemPath>${basedir}/lib/org.xmlpull-1.1.3.4_v201201052148.jar.jar</systemPath>
+		</dependency>
+		<dependency>
+			<groupId>org.xmlpull</groupId>
+			<artifactId>org.xmlpull</artifactId>
+			<version>${jub.version}</version>
+			<scope>system</scope>
+			<systemPath>${basedir}/lib/org.xmlpull.jar</systemPath>
+		</dependency>
+		<dependency>
+			<groupId>plugin</groupId>
+			<artifactId>plugin</artifactId>
+			<version>${jub.version}</version>
+			<scope>system</scope>
+			<systemPath>${basedir}/lib/plugin.jar</systemPath>
+		</dependency>
+		<dependency>
+			<groupId>resources</groupId>
+			<artifactId>resources</artifactId>
+			<version>${jub.version}</version>
+			<scope>system</scope>
+			<systemPath>${basedir}/lib/resources.jar</systemPath>
+		</dependency>
+		<dependency>
+			<groupId>rt</groupId>
+			<artifactId>rt</artifactId>
+			<version>${jub.version}</version>
+			<scope>system</scope>
+			<systemPath>${basedir}/lib/rt.jar</systemPath>
+		</dependency>
+		<dependency>
+			<groupId>slf4j-nop-1.8.0-alpha2</groupId>
+			<artifactId>slf4j-nop-1.8.0-alpha2</artifactId>
+			<version>1.8.0</version>
+			<scope>system</scope>
+			<systemPath>${basedir}/lib/slf4j-nop-1.8.0-alpha2.jar</systemPath>
+		</dependency>
+
+		<dependency>
+			<groupId>charsets</groupId>
+			<artifactId>charsets</artifactId>
+			<version>${jub.version}</version>
+			<scope>system</scope>
+			<systemPath>${basedir}/lib/charsets.jar</systemPath>
+		</dependency>
+		<dependency>
+			<groupId>com.thoughtworks.xstream-1.3.1.v201111240924.jar</groupId>
+			<artifactId>com.thoughtworks.xstream-1.3.1.v201111240924.jar</artifactId>
+			<version>1.3.1</version>
+			<scope>system</scope>
+			<systemPath>${basedir}/lib/com.thoughtworks.xstream-1.3.1.v201111240924.jar.jar</systemPath>
+		</dependency>
+		<dependency>
+			<groupId>com.thoughtworks.xstream</groupId>
+			<artifactId>com.thoughtworks.xstream</artifactId>
+			<version>${jub.version}</version>
+			<scope>system</scope>
+			<systemPath>${basedir}/lib/com.thoughtworks.xstream.jar</systemPath>
+		</dependency>
+		<dependency>
+			<groupId>deploy</groupId>
+			<artifactId>deploy</artifactId>
+			<version>${jub.version}</version>
+			<scope>system</scope>
+			<systemPath>${basedir}/lib/deploy.jar</systemPath>
+		</dependency>
+
+		<dependency>
+			<groupId>ice-3.3.1</groupId>
+			<artifactId>ice-3.3.1</artifactId>
+			<version>3.3.1</version>
+			<scope>system</scope>
+			<systemPath>${basedir}/lib/ice-3.3.1.jar</systemPath>
+		</dependency>
+	</dependencies>
+</project>
